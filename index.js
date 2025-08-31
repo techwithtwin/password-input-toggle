@@ -1,11 +1,14 @@
-const checkbox = document.getElementById("checkbox");
 const myInput = document.getElementById("myInput");
+const icon = document.querySelector(".icon");
 
-checkbox.addEventListener("change", (e) => {
-  let checked = e.target.checked;
-  if (checked) {
+icon.addEventListener("click", () => {
+  let currentType = myInput.type;
+
+  if (currentType === "password") {
+    icon.src = "/imgs/eye.svg";
     myInput.setAttribute("type", "text");
   } else {
+    icon.src = "/imgs/eyeoff.svg";
     myInput.setAttribute("type", "password");
   }
 });
